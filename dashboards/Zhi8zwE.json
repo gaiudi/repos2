@@ -1,0 +1,34 @@
+{
+  "pages": [
+    {
+      "id": "G1L8Fur",
+      "grid": {
+        "tiles": []
+      },
+      "showTitle": false
+    }
+  ],
+  "owner": "giovanni.aiudi@gmail.com",
+  "listed": true,
+  "name": "new_copied\u0027s default dashboard",
+  "showGrid": true,
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "giovanni.aiudi@gmail.com"
+    },
+    "lastModifiedOn": 1613569459383
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "giovanni.aiudi@gmail.com"
+    },
+    "lastModifiedOn": 1613569459383
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

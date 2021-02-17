@@ -1,0 +1,358 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "maxRecords": 30000,
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "charts": [
+    {
+      "chartOptions": {
+        "zeroEnabled": true,
+        "hAxisOptionsDisplayed": true,
+        "enabledYAxisModes": [
+          {
+            "shortLabel": "Normal",
+            "label": "Normal",
+            "value": "NORMAL"
+          },
+          {
+            "shortLabel": "Log",
+            "label": "Logarithmic scale",
+            "value": "LOG"
+          }
+        ],
+        "computeOptionsDisplayed": true,
+        "enabledComputeModes": [
+          {
+            "shortLabel": "None",
+            "label": "No computation",
+            "value": "NONE"
+          },
+          {
+            "shortLabel": "Ratio to AVG",
+            "label": "Compute ratio of each value relative to average of values",
+            "value": "LIFT_AVG"
+          }
+        ],
+        "vAxisOptionsDisplayed": true,
+        "enabledXAxisModes": [
+          {
+            "shortLabel": "Normal",
+            "label": "Normal",
+            "value": "NORMAL"
+          },
+          {
+            "shortLabel": "Cumulative",
+            "label": "Cumulative values",
+            "value": "CUMULATIVE"
+          },
+          {
+            "shortLabel": "Difference",
+            "label": "Difference (replace each value by the diff to the previous one)",
+            "value": "DIFFERENCE"
+          }
+        ]
+      },
+      "data": {
+        "filters": [
+          {
+            "columnType": "DATE",
+            "dateFilterType": "RANGE",
+            "minValue": -1661057280000,
+            "isA": "filter",
+            "__justDragDropped": true,
+            "column": "birth_parsed",
+            "cacheable": true,
+            "excludedValues": {},
+            "label": "birth_parsed",
+            "$$hashKey": "0PQ",
+            "type": "DATE"
+          }
+        ],
+        "yAxisMode": "NORMAL",
+        "type": "grouped_bars",
+        "sizeMeasures": [],
+        "xAxisMode": "NORMAL",
+        "chartOptions": {},
+        "measures": [
+          {
+            "displayed": true,
+            "displayType": "column",
+            "displayAxis": "axis1",
+            "isA": "measure",
+            "function": "COUNT",
+            "type": "NUMERICAL"
+          }
+        ],
+        "computeMode": "NONE",
+        "genericMeasures": [
+          {
+            "displayed": true,
+            "displayType": "column",
+            "displayAxis": "axis1",
+            "isA": "measure",
+            "function": "COUNT",
+            "type": "NUMERICAL"
+          }
+        ],
+        "colorMeasures": [],
+        "name": "Untitled chart 1",
+        "includeZero": true,
+        "dimensions": [
+          {
+            "isA": "dimension",
+            "column": "birth_parsed",
+            "generateOthersCategory": true,
+            "filters": [],
+            "sort": {
+              "label": "Natural ordering",
+              "type": "NATURAL"
+            },
+            "possibleSorts": [
+              {
+                "label": "Natural ordering",
+                "type": "NATURAL"
+              },
+              {
+                "label": "Count of records",
+                "type": "AGGREGATION",
+                "measureIdx": 0
+              }
+            ],
+            "type": "DATE",
+            "dateParams": {
+              "mode": "YEAR"
+            },
+            "possibleNewFilters": [
+              {
+                "minValue": 0,
+                "maxValue": 9999,
+                "label": "Value of the dimension",
+                "type": "DIMENSION_VALUES",
+                "group": "Dimension values"
+              },
+              {
+                "measureFilterId": 0,
+                "label": "Count of records",
+                "type": "MEASURE_VALUES",
+                "group": "Measure values"
+              }
+            ]
+          }
+        ],
+        "hexbinRadius": 20
+      },
+      "multiplotDisplayModes": [
+        "column",
+        "line"
+      ],
+      "dateModes": [
+        {
+          "label": "Year",
+          "value": "YEAR",
+          "group": "Timeline"
+        },
+        {
+          "label": "Month",
+          "value": "MONTH",
+          "group": "Timeline"
+        },
+        {
+          "label": "Week",
+          "value": "WEEK",
+          "group": "Timeline"
+        },
+        {
+          "label": "Day",
+          "value": "DAY",
+          "group": "Timeline"
+        },
+        {
+          "label": "Hour",
+          "value": "HOUR",
+          "group": "Timeline"
+        },
+        {
+          "label": "Quarter of Year",
+          "value": "QUARTER_OF_YEAR",
+          "group": "Regroup"
+        },
+        {
+          "label": "Month of Year",
+          "value": "MONTH_OF_YEAR",
+          "group": "Regroup"
+        },
+        {
+          "label": "Week of year",
+          "value": "WEEK_OF_YEAR",
+          "group": "Regroup"
+        },
+        {
+          "label": "Day of month",
+          "value": "DAY_OF_MONTH",
+          "group": "Regroup"
+        },
+        {
+          "label": "Day of week",
+          "value": "DAY_OF_WEEK",
+          "group": "Regroup"
+        },
+        {
+          "label": "Hour of day",
+          "value": "HOUR_OF_DAY",
+          "group": "Regroup"
+        }
+      ],
+      "$$hashKey": "0OV"
+    }
+  ],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "birth_parsed",
+        "formats": [
+          "MM/dd/yyyy"
+        ],
+        "columns": [
+          "birth"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateDifference",
+      "params": {
+        "output": "age",
+        "outputUnit": "YEARS",
+        "input1": "birth_parsed",
+        "compareTo": "NOW"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "birth",
+          "birth_parsed"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "if (age \u003e 0 \u0026\u0026 age \u003c 100, age, \"\")",
+        "column": "age"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "MemoryEquiJoiner",
+      "params": {
+        "rightCol": "customer_id",
+        "forceRawLevenshteinEngine": false,
+        "copyPrefix": "",
+        "sortAlphabetically": false,
+        "language": "english",
+        "leftCol": "customer_id",
+        "copyColumns": [
+          "ip",
+          "pages_visited",
+          "campain"
+        ],
+        "normalize": false,
+        "maxLevenshtein": 1,
+        "clearStopWords": false,
+        "fuzzy": false,
+        "rightInput": "web_history",
+        "stem": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "GeoIPResolver",
+      "params": {
+        "inCol": "ip",
+        "extract_country": true,
+        "extract_countrycode3": false,
+        "extract_city": false,
+        "extract_latlng": false,
+        "extract_countrycode": false,
+        "extract_postalcode": false,
+        "extract_timezone": false,
+        "outColPrefix": "ip_",
+        "extract_continentcode": false,
+        "extract_region": false,
+        "extract_geopoint": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "ip"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "previewMode": "ALL_ROWS",
+  "chartsEngine": "LINO",
+  "tags": [],
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "name": "Untitled script",
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}
